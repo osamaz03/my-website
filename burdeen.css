@@ -127,10 +127,10 @@ nav a:hover {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
     padding-left: 390px;
     word-spacing: 1px;
+    border-radius: 10px;
 }
 
-.about,
-.contact {
+.about, .contact {
     padding: 40px 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -244,6 +244,10 @@ footer a {
 @media (max-width: 991px) {
     .hero p {
         padding: 0 40px;
+    }
+
+    nav a {
+    color:#F5EEDC;
     }
 
     .product-list {

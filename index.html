@@ -75,7 +75,7 @@
 
     <section id="contact" class="contact">
         <h2>اتصل بنا</h2>
-        <form>
+        <form action="https://formsubmit.co/info@burdeenbic.com" method="POST">
             <label for="name">الاسم:</label>
             <input type="text" id="name" name="name" required>
 
@@ -84,6 +84,7 @@
 
             <label for="message">رسالتك:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
+            <input type="hidden" name="_captcha" value="false">
 
             <button type="submit">إرسال</button>
         </form>
