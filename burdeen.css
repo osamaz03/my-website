@@ -55,6 +55,31 @@ nav a:hover {
     color: #735557;
 }
 
+.lang-switch {
+    position: absolute;
+    top: 20px;
+    left: 30px; /* غيّر إلى right: 30px; إذا RTL */
+    z-index: 999;
+}
+
+.lang-switch button {
+    background-color:#EAE4D5;
+    color:black;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.2s;
+    font-size: 14px;
+}
+
+.lang-switch button:hover {
+    background-color: #f0f1c5;
+    color: #735557;
+    transform: scale(1.05);
+}
+
 .hero {
     background-color: #f4f4f4;
     text-align: center;
