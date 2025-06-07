@@ -266,6 +266,13 @@ footer a {
     form {
         padding: 0 10px;
     }
+
+    .lang-switch {
+    position: absolute;
+    top: 20px;
+    right: 5px; /* غيّر إلى right: 30px; إذا RTL */
+    z-index: 999;
+}
 }
 
 /* 💻 Tablet */
