@@ -335,7 +335,30 @@ footer a {
     right: 5px; /* غيّر إلى right: 30px; إذا RTL */
     z-index: 999;
 }
-}
+.product-tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 10px;
+  }
+
+  .product-tabs button {
+    background-color: #A76545;
+    color: white;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+    font-size: 12px; /* ✅ لتناسب الشاشات الصغيرة */
+  }
 
 /* 💻 Tablet */
 @media (max-width: 991px) {
@@ -364,4 +387,5 @@ footer a {
         width: 250px;
         position: static;
     }
+}
 }
