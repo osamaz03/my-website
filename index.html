@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burdeen</title>
     <link rel="stylesheet" href="burdeen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -37,40 +38,80 @@
     </section>
 
     <section id="products" class="products">
-        <h2>منتجاتنا</h2>
+    <h2>منتجاتنا</h2>
+
+    <!--  أزرار التبديل بين الأنواع -->
+    <div class="product-tabs">
+        <button onclick="showTab('wood')">الأبواب الخشبية</button>
+        <button onclick="showTab('wpc')">أبواب WPC</button>
+        <button onclick="showTab('custom')">الأثاث</button>
+    </div>
+
+    <!--  القسم 1 -->
+    <div id="wood" class="product-tab">
         <div class="product-list">
             <div class="product">
-                <img src="https://i.pinimg.com/736x/ea/92/eb/ea92eb664a40d5ef1aa4794b16e304e7.jpg" alt="صورة باب 1">
+                <img src="https://i.pinimg.com/736x/ea/92/eb/ea92eb664a40d5ef1aa4794b16e304e7.jpg" alt="">
                 <h3>باب خشبي كلاسيكي</h3>
-                <p></p>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/80/60/0d/80600d2a3deb3d8406f086b523c7a75b.jpg" alt="صورة باب 2">
+                <img src="https://i.pinimg.com/736x/80/60/0d/80600d2a3deb3d8406f086b523c7a75b.jpg" alt="">
                 <h3>باب حديث بتصميم عصري</h3>
-                <p></p>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/30/f2/49/30f249d77068aaf96016ffca2e9605e4.jpg" alt="صورة باب 3">
+                <img src="https://i.pinimg.com/736x/30/f2/49/30f249d77068aaf96016ffca2e9605e4.jpg" alt="">
                 <h3>باب خشبي كلاسيكي بنمط فرنسي</h3>
-                <p></p>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/35/a0/7c/35a07c306b435b4066ef4588ae606ee3.jpg" alt="صورة باب 4">
+                <img src="https://i.pinimg.com/736x/35/a0/7c/35a07c306b435b4066ef4588ae606ee3.jpg" alt="">
                 <h3>باب خشبي ذو مقبض معدني عصري</h3>
-                <p></p>
             </div>
-            <div class="product">
-                <img src="https://i.pinimg.com/736x/37/58/78/375878282e7d2d2568331375133a0eba.jpg" alt="صورة باب 5">
-                <h3>باب خشبي حديث بتصميم بسيط</h3>
-                <p></p>
-            </div>
-            <div class="product">
-                <img src="https://i.pinimg.com/736x/e5/5c/99/e55c9944ea6962dd2266f4d3549fa4e1.jpg" alt="صورة باب 6">
-                <h3>باب خشبي بتصميم حصري (Custom made Door)</h3>
-                <p></p>
-            </div>
-            <!-- يمكنك تكرار هذا القالب لمنتجات أخرى -->
         </div>
+    </div>
+
+    <!--  القسم 2 -->
+    <div id="wpc" class="product-tab" style="display: none;">
+        <div class="product-list">
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/af/98/44/af98446228c71914e67aefe5f74e5d35.jpg" alt="">
+                <h3>باب WPC كلاسيكي</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/9c/4b/b4/9c4bb4a9d7281d14b329ecac43c52524.jpg" alt="">
+                <h3>باب WPC بتصميم مميز</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/88/bf/e9/88bfe9c5b6dff8b2b218576f4dde6e8c.jpg" alt="">
+                <h3>باب WPC بلمسة عصرية</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/ab/71/24/ab7124dda9ef0a53274d6c9f776bfe04.jpg" alt="">
+                <h3>باب WPC بتشطيب فاخر</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--  القسم 3 -->
+    <div id="custom" class="product-tab" style="display: none;">
+        <div class="product-list">
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/62/00/b8/6200b8853f26a3d527a178fc0e3d64f9.jpg" alt="">
+                <h3>كرسي بإطار خشبي أنيق</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/24/06/ad/2406add76880c98db91de2d4a2839e81.jpg" alt="">
+                <h3>خزانة جانبية خشب</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/8e/b8/ef/8eb8ef89533030c11f34a877af76a41f.jpg" alt="">
+                <h3>دولاب أبواب مزدوجة بتصميم كلاسيكي</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/ea/7e/c3/ea7ec3c4898827fb61a4b34c061b1f8a.jpg" alt="">
+                <h3>سرير تخزين بخطوط ناعمة</h3>
+            </div>
+        </div>
+    </div>
     </section>
 
     <section id="about" class="about">
@@ -104,6 +145,23 @@
         <p>info@burdeenbic.com | 📞+966537987180📧</p>
         <p> 📍 الرياض - حي السلي - شارع الحسن الخطير - مبنى ٣١٨٨</p>
     </footer>
-   
+
+
+    <script>
+    function showTab(tabId) {
+    const tabs = document.querySelectorAll('.product-tab');
+    tabs.forEach(tab => tab.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+    }
+    </script>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/966537987180" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+    </a>
+
+
+
+
 </body>
 </html>

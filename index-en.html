@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burdeen</title>
     <link rel="stylesheet" href="burdeen-en.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -36,40 +37,80 @@
     </section>
 
     <section id="products" class="products">
-        <h2>Our products</h2>
+    <h2>Our products</h2>
+
+    <!--  أزرار التبديل بين الأنواع -->
+    <div class="product-tabs">
+        <button onclick="showTab('wood')">Wooden Doors</button>
+        <button onclick="showTab('wpc')">WPC Doors</button>
+        <button onclick="showTab('custom')">Furniture</button>
+    </div>
+
+    <!--  القسم 1 -->
+    <div id="wood" class="product-tab">
         <div class="product-list">
             <div class="product">
-                <img src="https://i.pinimg.com/736x/ea/92/eb/ea92eb664a40d5ef1aa4794b16e304e7.jpg" alt="صورة باب 1">
-                <h3>Classic wooden door</h3>
-                <p></p>
+                <img src="https://i.pinimg.com/736x/ea/92/eb/ea92eb664a40d5ef1aa4794b16e304e7.jpg" alt="">
+                <h3>Classic Wooden Door</h3>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/80/60/0d/80600d2a3deb3d8406f086b523c7a75b.jpg" alt="صورة باب 2">
-                <h3>Modern door with contemporary design</h3>
-                <p></p>
+                <img src="https://i.pinimg.com/736x/80/60/0d/80600d2a3deb3d8406f086b523c7a75b.jpg" alt="">
+                <h3>Modern Door with Contemporary Design</h3>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/30/f2/49/30f249d77068aaf96016ffca2e9605e4.jpg" alt="صورة باب 3">
-                <h3>Classic wooden door with French style</h3>
-                <p></p>
+                <img src="https://i.pinimg.com/736x/30/f2/49/30f249d77068aaf96016ffca2e9605e4.jpg" alt="">
+                <h3>Classic Wooden Door with French Style</h3>
             </div>
             <div class="product">
-                <img src="https://i.pinimg.com/736x/35/a0/7c/35a07c306b435b4066ef4588ae606ee3.jpg" alt="صورة باب 4">
-                <h3>Wooden door with a modern metal handle</h3>
-                <p></p>
+                <img src="https://i.pinimg.com/736x/35/a0/7c/35a07c306b435b4066ef4588ae606ee3.jpg" alt="">
+                <h3>Wooden Door with Modern Metal Handle</h3>
             </div>
-            <div class="product">
-                <img src="https://i.pinimg.com/736x/37/58/78/375878282e7d2d2568331375133a0eba.jpg" alt="صورة باب 5">
-                <h3>Modern wooden door with a simple design</h3>
-                <p></p>
-            </div>
-            <div class="product">
-                <img src="https://i.pinimg.com/736x/e5/5c/99/e55c9944ea6962dd2266f4d3549fa4e1.jpg" alt="صورة باب 6">
-                <h3>Custom-made wooden door</h3>
-                <p></p>
-            </div>
-            <!-- يمكنك تكرار هذا القالب لمنتجات أخرى -->
         </div>
+    </div>
+
+    <!--  القسم 2 -->
+    <div id="wpc" class="product-tab" style="display: none;">
+        <div class="product-list">
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/af/98/44/af98446228c71914e67aefe5f74e5d35.jpg" alt="">
+                <h3>Classic WPC Door</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/9c/4b/b4/9c4bb4a9d7281d14b329ecac43c52524.jpg" alt="">
+                <h3>WPC Door with Unique Design</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/88/bf/e9/88bfe9c5b6dff8b2b218576f4dde6e8c.jpg" alt="">
+                <h3>WPC Door with a Modern Touch</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/ab/71/24/ab7124dda9ef0a53274d6c9f776bfe04.jpg" alt="">
+                <h3>WPC Door with Luxurious Finish</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--  القسم 3 -->
+    <div id="custom" class="product-tab" style="display: none;">
+        <div class="product-list">
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/62/00/b8/6200b8853f26a3d527a178fc0e3d64f9.jpg" alt="">
+                <h3>Chair with Elegant Wooden Frame</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/24/06/ad/2406add76880c98db91de2d4a2839e81.jpg" alt="">
+                <h3>Wooden Side Cabinet</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/8e/b8/ef/8eb8ef89533030c11f34a877af76a41f.jpg" alt="">
+                <h3>Double Door Wardrobe with Classic Design</h3>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/ea/7e/c3/ea7ec3c4898827fb61a4b34c061b1f8a.jpg" alt="">
+                <h3>Storage Bed with Soft Lines</h3>
+            </div>
+        </div>
+    </div>
     </section>
 
     <section id="about" class="about">
@@ -103,5 +144,19 @@ Driven by a belief in long-term partnerships based on trust and professionalism,
         <p>📍 Riyadh - Al Sulay Dist. - Al Hassan Al Khater St. - Bldg. 3188 </p>
     </footer>
     <div></div>
+
+    <script>
+    function showTab(tabId) {
+    const tabs = document.querySelectorAll('.product-tab');
+    tabs.forEach(tab => tab.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+    }
+    </script>
+
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/966537987180" class="whatsapp-float" target="_blank" title="Contact us via WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+    </a>
 </body>
 </html>

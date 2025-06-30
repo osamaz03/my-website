@@ -66,7 +66,6 @@ nav a:hover {
 }
 
 .lang-switch button {
-    background-color:#EAE4D5;
     color:black;
     padding: 8px 14px;
     border-radius: 25px;
@@ -78,8 +77,8 @@ nav a:hover {
 }
 
 .lang-switch button:hover {
-    background-color: #f0f1c5;
-    color: #735557;
+    background-color: #74512D;
+    color: #ffffff;
     transform: scale(1.05);
 }
 
@@ -162,6 +161,33 @@ nav a:hover {
     text-align: left;
 }
 
+
+.product-tabs {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-tabs button {
+    background-color: #A76545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.product-tabs button:hover {
+    background-color: #f0f1c5;
+    color: #735557;
+}
+
+
+
 .about, .contact {
     padding: 40px 20px;
     background-color: #fff;
@@ -198,6 +224,14 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    transition: background 0.3s;
+    background-color: #f0f1c5;
+    color: #735557;
+    
 }
 
 footer {
@@ -215,6 +249,34 @@ footer a {
     padding: 0;
     text-decoration: none;
 }
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5b;
+    transform: scale(1.1);
+}
+
 
 /* 🌐 Media Queries */
 
