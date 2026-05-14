@@ -278,9 +278,9 @@ footer a {
 }
 
 
-/* 🌐 Media Queries */
+/*Media Queries */
 
-/* 📱 Mobile */
+/*  Mobile */
 @media (max-width: 600px) {
     header {
         flex-direction: column;

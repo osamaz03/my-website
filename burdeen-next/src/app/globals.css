@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+:root {
+  --background: #f8f6f3;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --brand-amber: #ea8c00;
+  --brand-amber-hover: #d17a00;
+  --brand-copper: #9a5c3c;
+  --brand-copper-hover: #854a31;
+  --card-border: rgba(15, 23, 42, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --product-tile-bg: #ece8e2;
+  --hero-blob-1: rgba(154, 92, 60, 0.12);
+  --hero-blob-2: rgba(234, 140, 0, 0.14);
+  --muted-text: #475569;
+}
+
+html.dark {
+  --background: #0c0f14;
+  --foreground: #e8edf4;
+  --surface: #141a22;
+  --surface-elevated: #1a222d;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(12, 15, 20, 0.88);
+  --product-tile-bg: #1e2633;
+  --hero-blob-1: rgba(234, 140, 0, 0.08);
+  --hero-blob-2: rgba(154, 92, 60, 0.1);
+  --muted-text: #94a3b8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand-amber) 35%, transparent);
+}
+
+html.dark ::selection {
+  background: color-mix(in srgb, var(--brand-amber) 45%, transparent);
+}
