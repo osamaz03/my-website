@@ -67,7 +67,7 @@ const pin = {
   wood2: "https://i.pinimg.com/736x/80/60/0d/80600d2a3deb3d8406f086b523c7a75b.jpg",
   wood3: "https://i.pinimg.com/736x/30/f2/49/30f249d77068aaf96016ffca2e9605e4.jpg",
   wood4: "https://i.pinimg.com/736x/35/a0/7c/35a07c306b435b4066ef4588ae606ee3.jpg",
-  wpc1: "https://i.pinimg.com/736x/b1/af/19/b1af19475473331ce3a0284db4c4c314.jpg",
+  wpc1: "https://i.pinimg.com/736x/68/07/9d/68079d868af462437084d639c5b53839.jpg",
   wpc2: "https://i.pinimg.com/736x/9c/4b/b4/9c4bb4a9d7281d14b329ecac43c52524.jpg",
   wpc3: "https://i.pinimg.com/736x/88/bf/e9/88bfe9c5b6dff8b2b218576f4dde6e8c.jpg",
   wpc4: "https://i.pinimg.com/736x/ab/71/24/ab7124dda9ef0a53274d6c9f776bfe04.jpg",
