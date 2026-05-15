@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import WhyBurdeenSection from "@/components/WhyBurdeenSection";
 import VisitUsSection from "@/components/VisitUsSection";
+import WorkingHoursSection from "@/components/WorkingHoursSection";
 
 export default function EnPage() {
   const lang = "en" as const;
@@ -26,6 +27,10 @@ export default function EnPage() {
 
       {/* Visit Us / Google Maps */}
       <VisitUsSection lang={lang} data={data} />
+
+      {/* Working Hours */}
+      <WorkingHoursSection lang={lang} data={data} />
+
 
       {/* Contact */}
       <ContactSection lang={lang} data={data} />

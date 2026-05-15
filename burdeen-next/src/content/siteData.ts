@@ -82,7 +82,7 @@ export const siteData: Record<Lang, SiteData> = {
     brandName: "BURDEEN",
     heroTitle: "Welcome to Burdeen",
     heroDescription:
-      "Burdeen is a leading manufacturer specialized in high-quality wooden and composite doors. We combine traditional craftsmanship with the latest technologies to offer a wide range of precisely crafted doors that suit various tastes and requirements, from classic to contemporary.",
+      "BURDEEN is a leading manufacturer specialized in premium WPC doors (Wood Plastic Composite), crafted from an advanced blend of wood and plastic to provide superior durability, strength, and resistance against moisture, termites, and decay.\n\nWe offer modern designs and natural wood-inspired finishes that perfectly complement homes, offices, hotels, and various interior spaces.\n\nOur focus is to combine quality, elegance, and long-lasting performance with a warranty of up to 10 years preserving color, structure, and flexibility.",
     heroImage: {
       src: "/images/hero_image1.jpg",
       alt: "Burdeen — wooden and composite doors",
@@ -190,7 +190,7 @@ export const siteData: Record<Lang, SiteData> = {
     brandName: "بـــرديــــــــــــــــن",
     heroTitle: "أهلاً بكم في BURDEEN",
     heroDescription:
-      "بردين، مصنع رائد متخصص في إنتاج الأبواب الخشبية عالية الجودة وأبواب الكومبوزيت. نجمع بين الحرفية التقليدية وأحدث التقنيات لنقدم مجموعة واسعة من الأبواب المصممة بدقة لتناسب مختلف الأذواق والمتطلبات، من الكلاسيكية إلى العصرية.",
+      "بردين مصنع رائد متخصص في إنتاج أبواب WPC عالية الجودة (Wood Plastic Composite)، والمصنوعة من مزيج متطور من الخشب والبلاستيك ليمنح الأبواب قوة ومتانة عالية مع مقاومة فعالة للرطوبة والنمل الأبيض والأرضة.\n\nنقدم تصاميم عصرية وألوانًا مستوحاة من الخشب الطبيعي والديكورات الحديثة لتنسجم مع مختلف أنماط المنازل والمكاتب والفنادق والمساحات الداخلية.\n\nنحرص على الجمع بين الجودة والأناقة مع ضمان يصل إلى 10 سنوات للحفاظ على اللون والشكل والمتانة.",
     heroImage: {
       src: "/images/hero_image.jpg",
       alt: "بردين — الأبواب الخشبية والكومبوزيت",

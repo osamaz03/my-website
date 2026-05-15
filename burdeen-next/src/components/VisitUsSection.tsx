@@ -8,7 +8,7 @@ export default function VisitUsSection({ lang, data }: { lang: Lang; data: SiteD
   // Note: Replace with your exact address/coordinates if you have them.
   // Using Google Maps embed without any client-side API/libraries.
   const mapSrc =
-  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1057.7161674826114!2d46.865400718998075!3d24.62769596463767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03f2c11f2cbf%3A0xa1fcd7d48cee5e5d!2z2LTYsdmD2Kkg2KjYsdiv2YrZhiDZhNmE2LXZhtin2LnYqSDYp9mE2YXYrdiv2YjYr9ip!5e0!3m2!1sar!2sde!4v1778723556843!5m2!1sar!2sde"
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226.68005851471537!2d46.86599539043263!3d24.6277882267822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2fa7003566faed%3A0x7489d923ef1934cc!2z2YXYtdmG2Lkg2LTYsdmD2Kkg2KjYsdiv2YrZhiDZhNmE2LXZhtin2LnYqQ!5e0!3m2!1sen!2sde!4v1778804923637!5m2!1sen!2sde"
 
   return (
     <section className="border-t border-[var(--card-border)] bg-[var(--surface)] py-14 sm:py-20">
