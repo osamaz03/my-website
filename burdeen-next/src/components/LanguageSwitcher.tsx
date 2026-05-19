@@ -26,10 +26,10 @@ export default function LanguageSwitcher({
   return (
     <Link
       href={`/${other}${hash}`}
-      className={`inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-slate-500 dark:hover:bg-slate-700 ${className}`}
+      className={`inline-flex items-center justify-center rounded-full border border-[var(--control-border)] bg-[var(--control-bg)] px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] ${className}`}
       title={label}
     >
-      <span className="me-1.5 text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+      <span className="me-1.5 text-xs font-semibold uppercase tracking-wide text-[var(--muted-text)]">
         {lang === "en" ? "AR" : "EN"}
       </span>
       {label}

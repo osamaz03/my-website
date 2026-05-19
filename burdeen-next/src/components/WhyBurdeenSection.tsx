@@ -123,33 +123,38 @@ export default function WhyBurdeenSection({ lang, data }: { lang: Lang; data: Si
   ];
 
   return (
-    <section className="border-b border-[var(--card-border)] bg-[var(--surface)] py-14 sm:py-20">
+    <section className="border-b border-[var(--shell-divider)] bg-[var(--shell-bg)] pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-20 lg:pb-24">
       <Container>
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 sm:text-3xl">
-              {lang === "ar" ? "لماذا BURDEEN" : "Why BURDEEN"}
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
+              {lang === "ar" ? (
+                <>
+                  لماذا <span className="text-[var(--accent-amber)]">BURDEEN</span>
+                </>
+              ) : (
+                <>
+                  Why <span className="text-[var(--accent-amber)]">BURDEEN</span>
+                </>
+              )}
             </h2>
-            <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-[var(--brand-copper)]" />
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:mt-14 lg:grid-cols-4 lg:gap-8">
           {cards.map((c, idx) => (
-            <Reveal key={c.title} delayMs={idx * 60}>
+            <Reveal key={c.title} delayMs={idx * 50}>
               <div
                 dir={dir}
-                className="group flex h-full flex-col rounded-2xl border border-[var(--card-border)] bg-[var(--background)] p-6 transition hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5 dark:bg-[var(--background)]"
+                className="group flex h-full flex-col rounded-xl border border-[var(--card-border)] bg-[color-mix(in_srgb,var(--surface)_55%,var(--shell-bg))] p-7 transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--accent-amber)_35%,var(--card-border))] hover:bg-[color-mix(in_srgb,var(--surface)_88%,var(--shell-bg))] dark:bg-[color-mix(in_srgb,var(--surface)_40%,var(--shell-bg))] dark:hover:bg-[color-mix(in_srgb,var(--surface)_70%,var(--shell-bg))]"
               >
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 rounded-xl border border-[var(--card-border)] bg-[var(--surface)] p-2 text-[var(--brand-copper)] transition group-hover:border-[var(--brand-copper)]">
+                <div className="flex items-start gap-4">
+                  <div className="mt-0.5 rounded-lg border border-[var(--card-border)] bg-[var(--surface)] p-2.5 text-[var(--brand-copper)] transition-colors duration-200 group-hover:border-[color-mix(in_srgb,var(--accent-amber)_25%,var(--card-border))]">
                     <FeatureIcon variant={c.icon} />
                   </div>
                   <div className="text-start">
-                    <h3 className="text-sm font-extrabold text-slate-900 dark:text-slate-50 sm:text-base">
-                      {c.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                    <h3 className="text-sm font-semibold text-[var(--foreground)] sm:text-base">{c.title}</h3>
+                    <p className="mt-2.5 text-sm leading-relaxed" style={{ color: "var(--muted-text)" }}>
                       {c.description}
                     </p>
                   </div>

@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import type { Lang } from "@/content/siteData";
 
 type Props = {
+  lang: Lang;
   imageSrc: string;
   imageAlt: string;
   logoSrc: string;
@@ -11,90 +13,114 @@ type Props = {
 };
 
 export default function HeroMedia({
+  lang,
   imageSrc,
   imageAlt,
- logoSrc,
+  logoSrc,
   logoAlt,
 }: Props) {
   const [useLogo, setUseLogo] = useState(false);
+  const isAr = lang === "ar";
 
+  const innerFadePos = lang === "en" ? "start-0" : "end-0";
+  const innerFadeGrad =
+    lang === "en"
+      ? "bg-gradient-to-r from-[var(--shell-bg)] via-[color-mix(in_srgb,var(--shell-bg)_55%,transparent)] to-transparent"
+      : "bg-gradient-to-l from-[var(--shell-bg)] via-[color-mix(in_srgb,var(--shell-bg)_55%,transparent)] to-transparent";
+
+  // Arabic light: use the same fade as English for consistency
+  const arLightInnerFade =
+    "bg-gradient-to-l from-[var(--shell-bg)] via-[color-mix(in_srgb,var(--shell-bg)_55%,transparent)] to-transparent";
+
+  // Determine the correct image for light/dark mode and language
+  // Default to the provided imageSrc for dark mode
+  // For light mode, use the special light mode images
+  // This uses the 'dark:' class to show/hide images based on color scheme
   return (
-    <div className="relative mx-auto w-full max-w-xl lg:max-w-2xl">
-      <div className="group relative aspect-[16/9] overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--product-tile-bg)] shadow-2xl shadow-black/10 dark:shadow-black/40">
-
-        {/* Hover Glow */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-          aria-hidden
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
-        </div>
-
-        {/* Border Ring */}
-        <div
-          className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-black/5 dark:ring-white/10"
-          aria-hidden
+    <div className="absolute inset-0 h-full w-full overflow-hidden">
+      {/* Light mode image */}
+      <div className="dark:hidden h-full w-full">
+        <Image
+          src={lang === "ar" ? "/images/hero_image_light_mode_ar.jpeg" : "/images/hero_image_light_mode_en.jpeg"}
+          alt={imageAlt}
+          fill
+          priority
+          onError={() => setUseLogo(true)}
+          className={`h-full w-full object-cover ${
+            lang === "ar"
+            ? "object-[10%_center]"
+            : "object-[90%_center]"
+            }`}
+          sizes="(max-width: 1024px) 100vw, 48vw"
         />
-
+      </div>
+      {/* Dark mode image (original) */}
+      <div className="hidden dark:block h-full w-full">
         {useLogo ? (
-          <div className="flex h-full items-center justify-center bg-gradient-to-br from-[var(--surface)] to-[var(--background)] p-8">
-
-            {/* Logo fallback */}
+          <div className="flex h-full w-full items-center justify-center bg-[var(--shell-bg)] p-10">
             <div className="relative h-28 w-full max-w-[260px] sm:h-36 sm:max-w-[320px]">
               <Image
                 src={logoSrc}
                 alt={logoAlt}
                 fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 80vw, 420px"
+                className="object-contain opacity-90"
+                sizes="(max-width: 1024px) 100vw, 48vw"
               />
             </div>
           </div>
         ) : (
-          <>
-            {/* Main Hero Image */}
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              priority
-              onError={() => setUseLogo(true)}
-              className="object-cover object-center transition-transform duration-700 will-change-transform group-hover:scale-[1.03]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-
-            {/* Cinematic Dark Overlay */}
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/15 to-transparent"
-              aria-hidden
-            />
-
-            {/* Warm Luxury Light */}
-            <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,180,80,0.18),transparent_55%)]"
-              aria-hidden
-            />
-
-            {/* Soft Vignette */}
-            <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.28)_100%)]"
-              aria-hidden
-            />
-
-            {/* Glass Reflection */}
-            <div
-              className="pointer-events-none absolute -left-20 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40 transition duration-700 group-hover:translate-x-[250%]"
-              aria-hidden
-            />
-          </>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            priority
+            onError={() => setUseLogo(true)}
+            className={`h-full w-full object-cover ${
+            lang === "ar"
+            ? "object-[20%_center]"
+            : "object-[80%_center]"
+            }`}
+            sizes="(max-width: 1024px) 100vw, 48vw"
+          />
         )}
+      </div>
 
-        {/* Amber Glow */}
+      {/* Desktop blend toward text column */}
+      {isAr ? (
+        <>
+          {/* Dark mode — original fade (unchanged) */}
+          <div
+            className={`pointer-events-none absolute inset-y-0 z-[1] hidden w-[28%] max-w-[200px] dark:lg:block ${innerFadePos} ${innerFadeGrad}`}
+            aria-hidden
+          />
+          {/* Light mode — very subtle only */}
+          <div
+            className={`pointer-events-none absolute inset-y-0 z-[1] hidden w-[14%] max-w-[96px] lg:block dark:lg:hidden ${innerFadePos} ${arLightInnerFade}`}
+            aria-hidden
+          />
+        </>
+      ) : (
         <div
-          className="pointer-events-none absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-[var(--brand-amber)]/20 blur-3xl"
+          className={`pointer-events-none absolute inset-y-0 z-[1] hidden w-[28%] max-w-[200px] lg:block ${innerFadePos} ${innerFadeGrad}`}
           aria-hidden
         />
-      </div>
+      )}
+
+      {/* Mobile top — Arabic light: off; dark unchanged */}
+      <div
+        className={`pointer-events-none absolute inset-x-0 top-0 z-[1] h-14 bg-gradient-to-b from-[var(--shell-bg)] to-transparent sm:h-20 lg:hidden ${
+          isAr ? "hidden dark:max-lg:block" : ""
+        }`}
+        aria-hidden
+      />
+      {/* */}
+      {/* Mobile bottom — Arabic light: off; dark unchanged */}
+      <div
+        className={`pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-16 bg-gradient-to-t from-[var(--shell-bg)] via-[color-mix(in_srgb,var(--shell-bg)_45%,transparent)] to-transparent sm:h-24 lg:hidden ${
+          isAr ? "hidden dark:max-lg:block" : ""
+        }`}
+        aria-hidden
+      />
     </div>
   );
 }

@@ -11,33 +11,49 @@ html.dark {
 }
 
 :root {
-  --background: #f8f6f3;
-  --foreground: #0f172a;
-  --surface: #ffffff;
-  --surface-elevated: #ffffff;
-  --brand-amber: #ea8c00;
-  --brand-amber-hover: #d17a00;
-  --brand-copper: #9a5c3c;
-  --brand-copper-hover: #854a31;
-  --card-border: rgba(15, 23, 42, 0.1);
-  --header-bg: rgba(255, 255, 255, 0.92);
-  --product-tile-bg: #ece8e2;
+  /* Soft neutral base — calm, readable, not harsh white */
+  --background: #efede9;
+  --foreground: #161a20;
+  --surface: #f6f4f0;
+  --surface-elevated: #faf8f5;
+  /* Unified top band (header + hero + “Why”) */
+  --shell-bg: #e8e6e1;
+  --shell-divider: rgba(22, 26, 32, 0.08);
+  --brand-amber: #b8742a;
+  --brand-amber-hover: #a06622;
+  --brand-copper: #8a5a3a;
+  --brand-copper-hover: #744831;
+  --accent-amber: #c17d2e;
+  --card-border: rgba(22, 26, 32, 0.09);
+  --header-bg: color-mix(in srgb, var(--shell-bg) 86%, white);
+  --product-tile-bg: #e4e1db;
+  --muted-text: #4b5563;
+  --control-border: rgba(22, 26, 32, 0.12);
+  --control-bg: color-mix(in srgb, var(--surface) 92%, transparent);
   --hero-blob-1: rgba(154, 92, 60, 0.12);
   --hero-blob-2: rgba(234, 140, 0, 0.14);
-  --muted-text: #475569;
 }
 
 html.dark {
-  --background: #0c0f14;
-  --foreground: #e8edf4;
-  --surface: #141a22;
-  --surface-elevated: #1a222d;
-  --card-border: rgba(255, 255, 255, 0.1);
-  --header-bg: rgba(12, 15, 20, 0.88);
-  --product-tile-bg: #1e2633;
+  --background: #0c0e14;
+  --foreground: #e6eaef;
+  --surface: #131820;
+  --surface-elevated: #181e28;
+  --shell-bg: #0d0d0d;
+  --shell-divider: rgba(255, 255, 255, 0.07);
+  --brand-amber: #c9924a;
+  --brand-amber-hover: #d4a056;
+  --brand-copper: #a67b52;
+  --brand-copper-hover: #8f6845;
+  --accent-amber: #d4a056;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --header-bg: color-mix(in srgb, var(--shell-bg) 88%, transparent);
+  --product-tile-bg: #161c26;
+  --muted-text: #9aa4b2;
+  --control-border: rgba(255, 255, 255, 0.1);
+  --control-bg: color-mix(in srgb, var(--surface) 75%, transparent);
   --hero-blob-1: rgba(234, 140, 0, 0.08);
   --hero-blob-2: rgba(154, 92, 60, 0.1);
-  --muted-text: #94a3b8;
 }
 
 body {

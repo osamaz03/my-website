@@ -41,9 +41,9 @@ export default function ThemeToggle({ ariaLabel }: { ariaLabel: string }) {
       onClick={toggle}
       aria-label={ariaLabel}
       aria-pressed={dark}
-      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-amber-200 dark:hover:border-slate-500 dark:hover:bg-slate-700"
+      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--control-border)] bg-[var(--control-bg)] text-[var(--foreground)] transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_8%,transparent)]"
     >
-      {ready ? dark ? <SunIcon /> : <MoonIcon /> : <span className="h-4 w-4 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden />}
+      {ready ? dark ? <SunIcon /> : <MoonIcon /> : <span className="h-4 w-4 rounded-full bg-[var(--muted-text)] opacity-40" aria-hidden />}
     </button>
   );
 }

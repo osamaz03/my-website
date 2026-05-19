@@ -40,7 +40,7 @@ export default function Header({
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--card-border)] bg-[var(--header-bg)] backdrop-blur-md supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-950/80">
+    <header className="sticky top-0 z-50 border-b border-[var(--shell-divider)] bg-[color-mix(in_srgb,var(--shell-bg)_90%,transparent)] backdrop-blur-md">
 
       {/* Header Container */}
       <Container className="flex h-25 items-center justify-between gap-3">
@@ -51,7 +51,7 @@ export default function Header({
           {/* Mobile Menu */}
           <button
             type="button"
-            className="relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-900 shadow-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 md:hidden"
+            className="relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--control-border)] bg-[var(--control-bg)] text-[var(--foreground)] shadow-none transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -60,19 +60,19 @@ export default function Header({
 
             <span className="flex flex-col gap-1.5" aria-hidden>
               <span
-                className={`block h-0.5 w-5 rounded-full bg-slate-800 transition dark:bg-slate-200 ${
+                className={`block h-0.5 w-5 rounded-full bg-[var(--foreground)] transition ${
                   open ? "translate-y-2 rotate-45" : ""
                 }`}
               />
 
               <span
-                className={`block h-0.5 w-5 rounded-full bg-slate-800 transition dark:bg-slate-200 ${
+                className={`block h-0.5 w-5 rounded-full bg-[var(--foreground)] transition ${
                   open ? "opacity-0" : ""
                 }`}
               />
 
               <span
-                className={`block h-0.5 w-5 rounded-full bg-slate-800 transition dark:bg-slate-200 ${
+                className={`block h-0.5 w-5 rounded-full bg-[var(--foreground)] transition ${
                   open ? "-translate-y-2 -rotate-45" : ""
                 }`}
               />
@@ -90,7 +90,7 @@ export default function Header({
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex rounded-full px-3 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 lg:px-4"
+                  className="inline-flex rounded-full px-3 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] lg:px-4"
                 >
                   {item.label}
                 </a>
@@ -124,7 +124,7 @@ export default function Header({
                 alt="BURDEEN logo"
                 fill
                 priority
-                sizes="/max-width:768px) 160px , 260px"
+                sizes="(max-width: 768px) 160px, 260px"
                 className="object-contain"
               />
             </div>
@@ -146,7 +146,7 @@ export default function Header({
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-x-0 top-0 z-50 max-h-[100dvh] overflow-y-auto border-b border-slate-200 bg-white px-4 pb-6 pt-24 shadow-xl transition duration-200 ease-out dark:border-slate-700 dark:bg-slate-900 md:hidden ${
+        className={`fixed inset-x-0 top-0 z-50 max-h-[100dvh] overflow-y-auto border-b border-[var(--shell-divider)] bg-[var(--shell-bg)] px-4 pb-6 pt-24 shadow-sm transition duration-200 ease-out md:hidden ${
           open
             ? "translate-y-0 opacity-100"
             : "-translate-y-3 pointer-events-none opacity-0"
@@ -158,7 +158,7 @@ export default function Header({
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block rounded-xl px-4 py-3 text-base font-semibold text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800"
+                  className="block rounded-lg px-4 py-3 text-base font-medium text-[var(--foreground)] transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)]"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -168,7 +168,7 @@ export default function Header({
           </ul>
 
           {/* Mobile Language Switcher */}
-          <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
+          <div className="mt-4 border-t border-[var(--shell-divider)] pt-4">
             <LanguageSwitcher
               lang={lang}
               className="w-full justify-center"

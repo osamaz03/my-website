@@ -80,12 +80,13 @@ const pin = {
 export const siteData: Record<Lang, SiteData> = {
   en: {
     brandName: "BURDEEN",
-    heroTitle: "Welcome to Burdeen",
+    heroTitle: "Welcome to BURDEEN",
+
     heroDescription:
-      "BURDEEN is a leading manufacturer specialized in premium WPC doors (Wood Plastic Composite), crafted from an advanced blend of wood and plastic to provide superior durability, strength, and resistance against moisture, termites, and decay.\n\nWe offer modern designs and natural wood-inspired finishes that perfectly complement homes, offices, hotels, and various interior spaces.\n\nOur focus is to combine quality, elegance, and long-lasting performance with a warranty of up to 10 years preserving color, structure, and flexibility.",
+      "BURDEEN specializes in premium WPC doors that combine durability, moisture resistance, and modern wood-inspired designs. We provide elegant solutions for homes, offices, and hotels with up to 10 years warranty.",
     heroImage: {
-      src: "/images/hero_image1.jpg",
-      alt: "Burdeen — wooden and composite doors",
+      src: "/images/hero_image4.jpg",
+      alt: "Burdeen — premium WPC door in a refined interior setting",
     },
     a11y: {
       toggleTheme: "Toggle dark mode",
@@ -190,10 +191,10 @@ export const siteData: Record<Lang, SiteData> = {
     brandName: "بـــرديــــــــــــــــن",
     heroTitle: "أهلاً بكم في BURDEEN",
     heroDescription:
-      "بردين مصنع رائد متخصص في إنتاج أبواب WPC عالية الجودة (Wood Plastic Composite)، والمصنوعة من مزيج متطور من الخشب والبلاستيك ليمنح الأبواب قوة ومتانة عالية مع مقاومة فعالة للرطوبة والنمل الأبيض والأرضة.\n\nنقدم تصاميم عصرية وألوانًا مستوحاة من الخشب الطبيعي والديكورات الحديثة لتنسجم مع مختلف أنماط المنازل والمكاتب والفنادق والمساحات الداخلية.\n\nنحرص على الجمع بين الجودة والأناقة مع ضمان يصل إلى 10 سنوات للحفاظ على اللون والشكل والمتانة.",
+      "بردين مصنع متخصص في أبواب WPC عالية الجودة، تجمع بين المتانة، مقاومة الرطوبة، والتصاميم العصرية المستوحاة من الخشب الطبيعي. نقدم حلولًا أنيقة للمنازل والمكاتب والفنادق مع ضمان يصل إلى 10 سنوات.",
     heroImage: {
-      src: "/images/hero_image.jpg",
-      alt: "بردين — الأبواب الخشبية والكومبوزيت",
+      src: "/images/hero_image3.jpg",
+      alt: "بردين — باب WPC فاخر في بيئة داخلية راقية",
     },
     a11y: {
       toggleTheme: "تبديل الوضع الداكن",

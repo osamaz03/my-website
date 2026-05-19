@@ -14,7 +14,10 @@ export default function AboutSection({ lang, data }: { lang: Lang; data: SiteDat
   const title = lang === "ar" ? "من نحن؟" : "About BURDEEN";
 
   return (
-    <section id="about" className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section
+      id="about"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24 scroll-mt-[84px] md:scroll-mt-[104px]"
+    >
       {/* Background depth */}
 
       {/* Light base aligned to the site's cohesive surface */}

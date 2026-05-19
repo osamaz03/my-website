@@ -5,7 +5,10 @@ export default function ContactSection({ lang, data }: { lang: Lang; data: SiteD
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <section id="contact" className="border-t border-[var(--card-border)] bg-[var(--surface)] py-14 sm:py-20">
+    <section
+      id="contact"
+      className="border-t border-[var(--card-border)] bg-[var(--surface)] py-14 sm:py-20 scroll-mt-[84px] md:scroll-mt-[104px]"
+    >
       <Container>
         <div className="mx-auto max-w-xl">
           <div className="text-center sm:text-start" dir={dir}>

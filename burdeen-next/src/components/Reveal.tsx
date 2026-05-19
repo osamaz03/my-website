@@ -53,19 +53,19 @@ export default function Reveal({
       className={className}
       style={{
         transitionDelay: `${delayMs}ms`,
-        transitionDuration: "700ms",
+        transitionDuration: "480ms",
       }}
     >
       <div
         className={
           visible
             ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-2"
+            : "opacity-0 translate-y-1"
         }
         style={{
           transitionProperty: "opacity, transform",
-          transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-          transitionDuration: "700ms",
+          transitionTimingFunction: "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          transitionDuration: "480ms",
         }}
       >
         {children}

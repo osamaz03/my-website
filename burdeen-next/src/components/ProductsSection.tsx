@@ -13,7 +13,7 @@ function ProductGrid({ items }: { items: SiteData["productTabs"][number]["items"
           className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--surface)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:shadow-black/20"
         >
           <div className="relative flex min-h-[260px] flex-1 overflow-hidden bg-[var(--product-tile-bg)] sm:min-h-[300px]">
-          <img
+            <img
               className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
               src={p.imageUrl}
               alt={p.title}
@@ -36,7 +36,7 @@ export default function ProductsSection({ lang, data }: { lang: Lang; data: Site
   }, [active, data.productTabs]);
 
   return (
-    <section id="products" className="py-14 sm:py-20">
+    <section id="products" className="py-14 sm:py-20 scroll-mt-[84px] md:scroll-mt-[104px]">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 sm:text-3xl">
