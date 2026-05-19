@@ -19,6 +19,7 @@ export default function Header({
   const nav = [
     { href: "#home", label: data.nav.home },
     { href: "#products", label: data.nav.products },
+    { href: "#projects", label: lang === "ar" ? "مشاريعنا" : "Our Projects" },
     { href: "#about", label: data.nav.about },
     { href: "#contact", label: data.nav.contact },
   ];

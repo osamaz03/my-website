@@ -1,3 +1,5 @@
+"use client";
+
 import type { Lang, SiteData } from "@/content/siteData";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
@@ -5,8 +7,10 @@ import Reveal from "@/components/Reveal";
 /**
  * Working Hours / Business Hours section.
  *
- * - Matches existing site design language (borders, radii, muted text, accent colors)
- * - Fully supports RTL/LTR by using dir + lang detection
+ * - Premium Burdeen styling (borders, radii, muted text, accent colors)
+ * - Mobile: compact combined line (no repetitive day list)
+ * - Desktop: detailed day-by-day cards
+ * - Time formatting fix for Arabic RTL bidi issues
  */
 export default function WorkingHoursSection({
   lang,
@@ -18,14 +22,17 @@ export default function WorkingHoursSection({
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   const items = [
-    { day: lang === "ar" ? "الجمعة" : "Friday", status: "closed" as const, time: "" },
-    { day: lang === "ar" ? "السبت" : "Saturday", status: "open" as const, time: "7 AM – 5 PM" },
-    { day: lang === "ar" ? "الأحد" : "Sunday", status: "open" as const, time: "7 AM – 5 PM" },
-    { day: lang === "ar" ? "الاثنين" : "Monday", status: "open" as const, time: "7 AM – 5 PM" },
-    { day: lang === "ar" ? "الثلاثاء" : "Tuesday", status: "open" as const, time: "7 AM – 5 PM" },
-    { day: lang === "ar" ? "الأربعاء" : "Wednesday", status: "open" as const, time: "7 AM – 5 PM" },
-    { day: lang === "ar" ? "الخميس" : "Thursday", status: "open" as const, time: "7 AM – 5 PM" },
+    { day: lang === "ar" ? "الجمعة" : "Friday", status: "closed" as const },
+    { day: lang === "ar" ? "السبت" : "Saturday", status: "open" as const },
+    { day: lang === "ar" ? "الأحد" : "Sunday", status: "open" as const },
+    { day: lang === "ar" ? "الاثنين" : "Monday", status: "open" as const },
+    { day: lang === "ar" ? "الثلاثاء" : "Tuesday", status: "open" as const },
+    { day: lang === "ar" ? "الأربعاء" : "Wednesday", status: "open" as const },
+    { day: lang === "ar" ? "الخميس" : "Thursday", status: "open" as const },
   ];
+
+  const openTimeEn = "7 AM - 5 PM";
+  const openTimeAr = "7 AM - 5 PM";
 
   return (
     <section className="border-t border-[var(--card-border)] bg-[var(--surface)] py-14 sm:py-20">
@@ -66,15 +73,31 @@ export default function WorkingHoursSection({
               </h2>
               <div className="mt-4 h-1 w-14 rounded-full bg-[var(--brand-copper)]" />
             </Reveal>
+
+            {/* Mobile: compact combined line */}
+            <div className="mt-6 block lg:hidden">
+              <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+                {lang === "ar" ? (
+                  <>
+                    من السبت إلى الخميس — <span dir="ltr">{openTimeAr}</span>
+                    <br />
+                    الجمعة: <span className="font-bold text-red-600 dark:text-red-400">مغلق</span>
+                  </>
+                ) : (
+                  <>
+                    Saturday to Thursday — <span dir="ltr">{openTimeEn}</span>
+                    <br />
+                    Friday: <span className="font-bold">Closed</span>
+                  </>
+                )}
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-8">
             <Reveal delayMs={80}>
-              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--background)] p-5 shadow-sm sm:p-8">
-                {/*
-                  Grid layout: balanced on desktop, stacked on mobile.
-                  Uses two columns on large screens to keep it elegant.
-                */}
+              {/* Desktop: detailed day-by-day cards */}
+              <div className="hidden rounded-2xl border border-[var(--card-border)] bg-[var(--background)] p-5 shadow-sm sm:p-8 lg:block">
                 <ul className="grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2">
                   {items.map((it) => {
                     const closed = it.status === "closed";
@@ -83,9 +106,7 @@ export default function WorkingHoursSection({
                         key={it.day}
                         className="group flex items-start justify-between rounded-xl border border-[var(--card-border)] bg-[var(--surface)] px-4 py-3 transition hover:border-slate-300 dark:bg-[var(--background)] dark:hover:border-slate-600"
                       >
-                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-50">
-                          {it.day}
-                        </span>
+                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-50">{it.day}</span>
                         <span
                           className={
                             closed
@@ -93,11 +114,25 @@ export default function WorkingHoursSection({
                               : "text-sm font-bold text-[var(--brand-copper)]"
                           }
                         >
-                          {closed ? (lang === "ar" ? "مغلق" : "Closed") : it.time}
+                          {closed ? (lang === "ar" ? "مغلق" : "Closed") : <span dir="ltr">{lang === "ar" ? openTimeAr : openTimeEn}</span>}
                         </span>
                       </li>
                     );
                   })}
+                </ul>
+              </div>
+
+              {/* Mobile placeholder: keeps spacing consistent without repeating the list */}
+              <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--background)] p-5 shadow-sm sm:p-8 lg:hidden">
+                <ul className="grid grid-cols-1 gap-3">
+                  <li className="group flex items-start justify-between rounded-xl border border-[var(--card-border)] bg-[var(--surface)] px-4 py-3">
+                    <span className="text-sm font-semibold text-slate-900 dark:text-slate-50">
+                      {lang === "ar" ? "الأوقات" : "Hours"}
+                    </span>
+                    <span className="text-sm font-bold text-[var(--brand-copper)]" dir="ltr">
+                      {lang === "ar" ? openTimeAr : openTimeEn}
+                    </span>
+                  </li>
                 </ul>
               </div>
             </Reveal>

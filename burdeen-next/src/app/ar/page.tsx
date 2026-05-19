@@ -6,6 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import WhyBurdeenSection from "@/components/WhyBurdeenSection";
 import VisitUsSection from "@/components/VisitUsSection";
 import WorkingHoursSection from "@/components/WorkingHoursSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function ArPage() {
   const lang = "ar" as const;
@@ -25,6 +26,9 @@ export default function ArPage() {
       {/* About */}
       <AboutSection lang={lang} data={data} />
 
+      {/* Projects */}
+      <ProjectsSection lang={lang} data={data} />
+
       {/* Visit Us / Google Maps */}
       <VisitUsSection lang={lang} data={data} />
 
@@ -36,5 +40,6 @@ export default function ArPage() {
     </div>
   );
 }
+
 
 
